@@ -1,0 +1,24 @@
+com.example.flashquiz
+color black
+color primary_blue
+color primary_dark
+color white
+drawable ic_launcher_background
+drawable ic_launcher_foreground
+id btn_add_card
+id btn_cancel
+id btn_save
+id card_answer
+id card_question
+id input_answer
+id input_question
+id main_layout
+layout activity_add_card
+layout activity_main
+mipmap ic_launcher
+mipmap ic_launcher_round
+string app_name
+style Base_Theme_FlashQuiz
+style Theme_FlashQuiz
+xml backup_rules
+xml data_extraction_rules

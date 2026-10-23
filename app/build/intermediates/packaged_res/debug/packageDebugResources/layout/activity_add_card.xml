@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="20dp"
+    tools:context=".AddCardActivity">
+
+    <!-- Champ pour entrer la question -->
+    <EditText
+        android:id="@+id/input_question"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:hint="Enter The Question Here"
+        android:textSize="18sp"
+        android:minHeight="48dp" />
+
+    <!-- Champ pour entrer la réponse -->
+    <EditText
+        android:id="@+id/input_answer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/input_question"
+        android:layout_marginTop="30dp"
+        android:hint="Enter The Answer Here"
+        android:textSize="18sp"
+        android:minHeight="48dp" />
+
+    <!-- Bouton Annuler (Cancel) en bas à gauche -->
+    <ImageView
+        android:id="@+id/btn_cancel"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_margin="20dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:contentDescription="Annuler"
+        android:src="@android:drawable/ic_menu_close_clear_cancel" />
+
+    <!-- Bouton Enregistrer (Save) en bas à droite -->
+    <ImageView
+        android:id="@+id/btn_save"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_margin="20dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:contentDescription="Enregistrer"
+        android:src="@android:drawable/ic_menu_save" />
+
+</RelativeLayout>

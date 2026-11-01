@@ -22,7 +22,6 @@
 
     <!-- Flashcard Answer Side (Verso) -->
     <TextView
-
         android:id="@+id/card_answer"
         android:layout_width="match_parent"
         android:layout_height="250dp"
@@ -34,13 +33,26 @@
         android:textSize="36sp"
         android:visibility="invisible" />
 
-    <!-- Nouveau : Bouton "+" pour aller vers l'écran d'ajout -->
+    <!-- Icône "Suivant" (flèche '>') pour naviguer entre les cartes de la base de données -->
+    <ImageView
+        android:id="@+id/btn_next"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_above="@id/btn_add_card"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:contentDescription="Carte suivante"
+        android:src="@android:drawable/ic_media_play" />
+
+    <!-- Bouton "+" pour aller vers l'écran d'ajout -->
     <ImageView
         android:id="@+id/btn_add_card"
         android:layout_width="60dp"
         android:layout_height="60dp"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
         android:layout_margin="20dp"
         android:background="?attr/selectableItemBackgroundBorderless"
         android:contentDescription="Ajouter une carte"

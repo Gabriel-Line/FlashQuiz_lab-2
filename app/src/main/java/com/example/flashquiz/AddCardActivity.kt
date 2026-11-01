@@ -17,16 +17,29 @@ class AddCardActivity : AppCompatActivity() {
         val btnCancel = findViewById<ImageView>(R.id.btn_cancel)
         val btnSave = findViewById<ImageView>(R.id.btn_save)
 
-        // Bouton Annuler : ferme l'activité sans rien sauvegarder[span_3](start_span)[span_3](end_span)
+        // Bouton Annuler : ferme l'activité sans rien sauvegarder
         btnCancel.setOnClickListener {
             finish()
         }
 
-        // Bouton Enregistrer : récupère les textes et les renvoie à MainActivity[span_4](start_span)[span_4](end_span)
+        // Bouton Enregistrer : sauvegarde dans Room et renvoie à MainActivity
         btnSave.setOnClickListener {
             val questionString = inputQuestion.text.toString()
             val answerString = inputAnswer.text.toString()
 
+            // Vérification que les champs ne sont pas vides
+            if (questionString.isNotBlank() && answerString.isNotBlank()) {
+                // Création de l'objet Flashcard pour Room
+                val card = Flashcard(question = questionString, answer = answerString)
+
+                // Insertion dans la base de données Room (exécutée en arrière-plan)
+                Thread {
+                    val database = AppDatabase.getDatabase(applicationContext)
+                    database.flashcardDao().insertCard(card)
+                }.start()
+            }
+
+            // Renvoi des données via Intent (si utilisé par MainActivity)
             val data = Intent()
             data.putExtra("question_key", questionString)
             data.putExtra("answer_key", answerString)
